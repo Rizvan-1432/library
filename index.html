@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Библиотека</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Библиотека</h1>
+        <input type="text" id="bookTitle" placeholder="Название книги">
+        
+        <select id="bookCategory">
+            <option value="" disabled selected>Выберите категорию</option>
+            <option value="Фантастика">Фантастика</option>
+            <option value="Научная фантастика">Научная фантастика</option>
+            <option value="Роман">Роман</option>
+            <option value="Детская литература">Детская литература</option>
+            <option value="Научно-популярная">Научно-популярная</option>
+            <option value="История">История</option>
+            <option value="Биография">Биография</option>
+            <option value="Поэзия">Поэзия</option>
+            <option value="Детектив">Детектив</option>
+            <option value="Приключения">Приключения</option>
+            <option value="Ужасы">Ужасы</option>
+            <option value="Программирование">Программирование</option>
+        </select>
+    
+        <input type="number" id="bookRating" min="1" max="5" placeholder="Оценка (1-5)">
+        <input type="file" id="bookFile" accept=".pdf">
+        <input type="file" id="bookCover" accept="image/*">
+        <button id="addBookBtn">Добавить книгу</button>
+        
+        <input type="text" id="searchInput" placeholder="Поиск книг..." onkeyup="filterBooks()">
+        <select id="sortSelect" onchange="sortBooks()">
+            <option value="title">По названию</option>
+            <option value="rating">По оценке</option>
+        </select>
+        
+        <div class="book-count" id="bookCount">Количество книг: 0</div>
+        
+        <div class="book-list" id="bookList"></div>
+        
+        <button onclick="exportBooks()">Экспорт в CSV</button>
+        
+        <div class="action-history" id="actionHistory"></div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
